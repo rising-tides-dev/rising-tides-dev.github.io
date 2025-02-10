@@ -113,7 +113,7 @@ nav .logo, footer .logo {
   background-size: 50px;
   animation-duration: 1.5s;
   background-position-y: 7px;
-  background-image: url(file:///Users/work/Downloads/trt/wave-repeating.svg);
+  background-image: url(wave-repeating.svg);
   background-repeat: repeat-x;
   background-position-x: -112px;
   animation-duration: 1s;
@@ -257,7 +257,7 @@ nav .logo, footer .logo {
 }
 
 .surfs-up-brah {
-  background-image: url(file:///Users/work/Downloads/trt/wave-repeating.svg);
+  background-image: url(wave-repeating.svg);
   background-repeat: repeat-x;
   background-position-x: -112px;
   animation-duration: 1s;
