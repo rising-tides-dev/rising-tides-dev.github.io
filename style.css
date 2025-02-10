@@ -1,0 +1,307 @@
+:root {
+    --rt-blue: #092438;
+    --rt-blue-darker: #082034;
+    --rt-orange: #d6711b;
+    --rt-red: #d7481a;
+    --rt-green: #1ed71a;
+    --rt-red-darker: hsl(from var(--rt-red) h s calc(l - 5));
+    --rt-white: white;
+    /* --rt-white: #ffecdc; */
+    --rt-not-quite-white: #d9e5ef;
+    --rt-not-quite-white-x2: #a7bbcc;
+
+    --border-radius: 4px;
+    --border-radius-2: 8px;
+    --border-radius-4: 16px;
+}
+
+.rt-button-primary {
+    background-color: var(--rt-red);
+    border-color: var(--rt-red-darker);
+  }
+  .rt-button-primary:hover, .rt-button-primary:active, .rt-button-primary:focus {
+    background-color: var(--rt-red-darker);
+    border-color: var(--rt-red-darker);
+}
+
+html {
+    font-size: 20px;
+    background-color: var(--rt-blue-darker);
+}
+
+body {
+    min-height: 100vh!important;
+    font-family: "Share Tech Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--rt-blue);
+    color: var(--rt-not-quite-white);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--rt-white);
+}
+
+h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    border-bottom: 1px solid var(--rt-red);
+    text-shadow: 4px 5px black;
+}
+h1:after {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    content: "";
+    /* border: 3px solid var(--rt-orange); */
+    background: url(semi-ring.svg);
+    border-radius: 50%;
+    top: -40px;
+    right: -50px;
+    /* z-index: -1; */
+}
+
+a {
+  color: var(--rt-white);
+}
+
+.font-smaller {
+  font-size: 0.85rem;
+}
+
+:root input, :root select {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.steps-number {
+  font-size: 2rem;
+  font-family: system-ui;
+  display: block;
+}
+
+nav, footer {
+  background: var(--rt-blue-darker);
+}
+nav, footer {
+  line-height: 80px;
+}
+nav .logo, footer .logo {
+  height: 60px;
+  margin: 10px 0;
+}
+
+.logo-wrap {
+  position: relative;
+  display: inline-block;
+}
+.logo-wrap img {
+  box-shadow: 0 0 10px 5px var(--rt-blue-darker);
+  background: var(--rt-blue-darker);
+  z-index: 1;
+  position: relative;
+}
+.logo-wrap .surfs-up-brah-logo {
+  position: absolute;
+  opacity: 1;
+  top: 14px;
+  width: 159px;
+  left: -50px;
+  height: 50px;
+  background-size: 50px;
+  animation-duration: 1.5s;
+  background-position-y: 7px;
+  background-image: url(file:///Users/work/Downloads/trt/wave-repeating.svg);
+  background-repeat: repeat-x;
+  background-position-x: -112px;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: surfs-up-brah-logo-animation;
+  animation-timing-function: linear;
+}
+.logo-wrap .surfs-up-brah-logo:after {
+  content: "";
+  background: linear-gradient(100deg, var(--rt-blue-darker) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, var(--rt-blue-darker) 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@keyframes surfs-up-brah-logo-animation {
+  0% {background-position-x: 0px;}
+  100% {background-position-x: -100px;}
+}
+
+.moving-waves-wrap {
+    overflow: hidden;
+    position: relative;
+    height: 75px;
+    width: 100%;
+    opacity: 0.4;
+}
+.moving-waves-wrap:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(9,36,56,1) 0%, rgba(9,36,56,0) 30%, rgba(9,36,56,0) 70%, rgba(9,36,56,1) 100%);
+}
+.moving-wave {
+    /* margin-top: -90px; */
+    animation-name: wavemove;
+    /* animation-duration: 10s; */
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    top: 3px;
+    left: -80px;
+    /* if you want more mellow sine height */
+    /* height: 50px;
+    width: 1560px; */
+  }
+  #loadingSpinner .moving-wave {
+    animation-name: wavemove-blur;
+  }
+  @keyframes wavemove {
+    0%   {margin-left:0px;}
+    100%  {margin-left:-115px;}
+  }
+  @keyframes wavemove-blur {
+    0%   {margin-left:0px;filter: blur(0px);}
+    50%   {margin-left:-58px;filter: blur(7px);}
+    100%  {margin-left:-116px;filter: blur(0px);}
+  }
+  .wave-a {
+    margin-top: -20px;
+    opacity: 0.33;
+    /* animation-duration: 2s; */
+    animation-duration: 0.4s;
+  }
+  .wave-b {
+    margin-top: -10px;
+    opacity: 0.66;
+    /* animation-duration: 4s; */
+    animation-duration: 0.7s;
+  }
+  .wave-c {
+    margin-top: 0;
+    opacity: 1;
+    /* animation-duration: 6s; */
+    animation-duration: 1s;
+  }
+
+  .form-wrap {
+    position: relative;
+    border: 1px solid var(--rt-not-quite-white-x2);
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem;
+  }
+.form-heading {
+    position: absolute;
+    font-size: 1.5rem;
+    background: var(--rt-blue);
+    top: -16px;
+    padding: 0 1rem;
+}
+
+.chart-wrap {
+  /* outline: 1px solid rgba(255, 255, 255, 0.075); */
+  border-radius: var(--border-radius-4);
+  overflow: hidden;
+}
+
+.slosh-box-spinner {
+  margin: 0 auto;
+  border-radius: 5%;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  border: 4px solid rgba(255,255,255,1);
+  box-shadow: 0 0 13px rgba(255,255,255,0.9);
+}
+.sbs-bars {
+  position: absolute;
+  bottom: 0%;
+  background: rgba(255,255,255,1);
+  box-shadow: 0 0 13px rgba(255,255,255,0.9);
+  width: 25%;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: slosh-box-animation;
+  animation-timing-function: ease-in-out;
+}
+#sbs1 {
+  left: 0%;
+}
+#sbs2 {
+  left: 25%;
+  animation-delay: 0.15s;
+}
+#sbs3 {
+  left: 50%;
+  animation-delay: 0.3s;
+}
+#sbs4 {
+  left: 75%;
+  animation-delay: 0.45s;
+}
+@keyframes slosh-box-animation {
+  0% {height: 0%;}
+  50% {height: 100%;}
+  100% {height: 0%;}
+}
+
+.surfs-up-brah {
+  background-image: url(file:///Users/work/Downloads/trt/wave-repeating.svg);
+  background-repeat: repeat-x;
+  background-position-x: -112px;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: surfs-up-brah-animation;
+  animation-timing-function: linear;
+  width: 390px;
+  height: 80px;
+}
+.surfs-up-brah-faster {
+  animation-duration: 1.1s;
+}
+@keyframes surfs-up-brah-animation {
+  0% {background-position-x: 0px;}
+  100% {background-position-x: -112px;}
+}
+
+.steps-area {
+  /* a brilliant site: https://www.visiwig.com/patterns/ */
+  background-color: #EBB40000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='p' width='250' height='30' patternUnits='userSpaceOnUse'%3E%3Cpath id='a' data-color='outline' fill='none' stroke='%2300000015' stroke-width='5' d='M-62.5-15C-31.3-15 0-7.5 0-7.5S31.3 0 62.5 0 125-7.5 125-7.5s31.3-7.5 62.5-7.5S250-7.5 250-7.5 281.3 0 312.5 0'%3E%3C/path%3E%3Cuse xlink:href='%23a' y='15'%3E%3C/use%3E%3Cuse xlink:href='%23a' y='30'%3E%3C/use%3E%3Cuse xlink:href='%23a' y='45'%3E%3C/use%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23p)' width='100%25' height='100%25'%3E%3C/rect%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sort-area select {
+  max-width: 100%;
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 11vw;
+  }
+  h1:after {
+    top: -50px;
+}
+}
+@media (max-width: 768px) {
+	.experience-area ul {
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width: 768px), screen and (max-height: 555px) {
+
+}

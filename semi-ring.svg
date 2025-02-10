@@ -1,0 +1,9 @@
+<svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="cut-bottom">
+	  <polygon points="50,50 0,50 0,0 100,0 100,100 50,100 50,50" style="fill:lime;stroke:purple;stroke-width:3" />
+
+    </clipPath>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#d6711b" stroke-width="4" clip-path="url(#cut-bottom)" />
+</svg>
