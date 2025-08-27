@@ -188,6 +188,7 @@
                             <label for="theSort">sort</label>
                             <select id="theSort" class="p-1">
                                 <option value="">-</option>
+                                <option value="sineWaveRating">The closest to a sine wave</option>
                                 <option value="candlesStartingAboveRatio">Ratio of candles starting above to below</option>
                                 <option value="candlesStartingBelowRatio">Ratio of candles starting below to above</option>
                                 <option value="candlesStartingMediocrityScore">Most even ratio of candles starting above to below</option>
@@ -313,10 +314,12 @@
             async function checkScripts() {
                 const mainExists = await scriptExists("js/main.js");
                 const utilitiesExists = await scriptExists("js/utilities.js");
-                if (!mainExists || !utilitiesExists) {
+                const cuckedByAiExists = await scriptExists("js/cucked-by-ai.js");
+                if (!mainExists || !utilitiesExists || !cuckedByAiExists) {
                 console.warn("Missing required scripts! Loading fallback...");
                 document.querySelector('[src="js/main.js"]').remove();
                 document.querySelector('[src="js/utilities.js"]').remove();
+                document.querySelector('[src="js/cucked-by-ai.js"]').remove();
                 const fallbackScript = document.createElement("script");
                 fallbackScript.src = "scripts.js";
                 document.head.appendChild(fallbackScript);
